@@ -6,7 +6,7 @@ class Login extends Component {
     super();
     this.state = {
       user: '',
-      favoriteQuote: '',
+      quote: '',
       ranking: 'Novice'
     }
     this.handleChange = this.handleChange.bind(this);
@@ -15,7 +15,7 @@ class Login extends Component {
 
   handleChange(e) {
     this.setState({
-      [e.target.name] : e.target.value
+      [e.target.id] : e.target.value
     });
   }
 
@@ -25,22 +25,28 @@ class Login extends Component {
 
   render() {
     return (
-      <form onSubmit={e => this.handleSubmit(e)}>
-        <input onChange={e => this.handleChange(e)}
-               value={this.state.user}
-               name="user" />
-        <input onChange={e => this.handleChange(e)}
-               value={this.state.favoriteQuote}
-               name="favoriteQuote" />
-        <select onChange={e => this.handleChange(e)} 
-                name="ranking"
-                value={this.state.ranking}>
-          <option>Novice</option>
-          <option>Intermediate</option>
-          <option>Expert</option>
-        </select>
-        <button type="submit">SUBMIT</button>
-      </form>
+      <div className="modal">
+        <form onSubmit={e => this.handleSubmit(e)}>
+          <h3>Log in. Or do not log in. There is no try.</h3>
+          <label for="user">Username</label>
+          <input onChange={e => this.handleChange(e)}
+                 value={this.state.user}
+                 id="user"/>
+          <label for="quote">Favorite Star Wars Quote</label>
+          <input onChange={e => this.handleChange(e)}
+                 value={this.state.favoriteQuote}
+                 id="quote"/>
+          <label for="quote">Familiarity with Star Wars</label>
+          <select onChange={e => this.handleChange(e)}
+                  id="ranking"
+                  value={this.state.ranking}>
+            <option>Novice</option>
+            <option>Intermediate</option>
+            <option>Expert</option>
+          </select>
+          <button type="submit" disabled>SUBMIT</button>
+        </form>
+      </div>
     )
   }
 }
