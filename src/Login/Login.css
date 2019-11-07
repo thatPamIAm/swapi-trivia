@@ -1,0 +1,34 @@
+.modal {
+  align-items: center;
+  border: 1px gray solid;
+  border-radius: 5px;
+  display: flex;
+  font-family: Helvetica;
+  height: 400px;
+  justify-content: center;
+  margin: 10% auto;
+  width: 500px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+form input, form select, form button {
+  border-radius: 5px;
+  height: 30px;
+  margin: 5px 0 20px;
+  padding: 0 5px;
+}
+
+form button {
+  cursor: not-allowed;
+  font-family: Helvetica;
+  font-size: 1rem;
+}
+
+label, h3 {
+  text-align: left;
+}
