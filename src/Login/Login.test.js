@@ -15,14 +15,14 @@ describe('Login', () => {
 
   it('should have a default state', () => {
     expect(wrapper.state().user).toBe('');
-    expect(wrapper.state().favoriteQuote).toBe('');
+    expect(wrapper.state().quote).toBe('');
     expect(wrapper.state().ranking).toBe('Novice');
   });
 
   it('should update state with a new user when handleChange is invoked', () => {
     const mockEvent = {
       target : {
-        name: "user",
+        id: "user",
         value: "thatPamIAm"
       }
     }
@@ -37,22 +37,22 @@ describe('Login', () => {
   it('should update state with a new quote when handleChange is invoked', () => {
     const mockEvent = {
       target : {
-        name: "favoriteQuote",
+        id: "quote",
         value: "I find your lack of faith disturbing."
       }
     }
 
-    expect(wrapper.state().favoriteQuote).toBe('');
+    expect(wrapper.state().quote).toBe('');
 
     wrapper.instance().handleChange(mockEvent);
 
-    expect(wrapper.state().favoriteQuote).toBe('I find your lack of faith disturbing.');
+    expect(wrapper.state().quote).toBe('I find your lack of faith disturbing.');
   });
 
   it('should update state with a ranking level when handleChange is invoked', () => {
     const mockEvent = {
       target : {
-        name: "ranking",
+        id: "ranking",
         value: "Expert"
       }
     }
