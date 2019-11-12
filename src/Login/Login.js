@@ -39,12 +39,12 @@ class Login extends Component {
 
     if (!fields.user) {
       isFormValid = false;
-      errors.user = " Please enter a username to continue."
+      errors.user = " Please enter a username to continue.";
     }
 
     if(!fields.quote) {
       isFormValid = false;
-      errors.quote = " Please enter a Star Wars quote to continue."
+      errors.quote = " Please enter a Star Wars quote to continue.";
     }
 
     this.setState({
