@@ -19,16 +19,28 @@ form {
 form input, form select, form button {
   border-radius: 5px;
   height: 30px;
-  margin: 5px 0 20px;
+  margin: 5px 0 1px 0;
   padding: 0 5px;
 }
 
 form button {
-  cursor: not-allowed;
+  cursor: pointer;
   font-family: Helvetica;
   font-size: 1rem;
+  margin-top: 10px;
 }
 
 label, h3 {
+  margin-top: 15px;
   text-align: left;
+}
+
+.error-message {
+  color: #cc0000;
+  height: 10px;
+  text-align: left;
+}
+
+.error-message p {
+  margin: 0;
 }
