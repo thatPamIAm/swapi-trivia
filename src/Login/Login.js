@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './Login.css';
 
 class Login extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       fields: {
         user: '',
@@ -28,6 +28,7 @@ class Login extends Component {
   handleSubmit(e) {
     e.preventDefault();
     if(this.validateForm()) {
+      this.props.logInUser(this.state.fields);
       this.clearFields();
     }
   }
@@ -48,7 +49,7 @@ class Login extends Component {
     }
 
     this.setState({
-      errors: errors
+      errors
     })
 
     return isFormValid;
@@ -61,31 +62,30 @@ class Login extends Component {
     };
 
     this.setState({
-      fields: fields 
+      fields 
     });
   }
 
   render() {
-
     return (
       <div className="modal">
         <form onSubmit={e => this.handleSubmit(e)}>
           <h3>Log in. Or do not log in. There is no try.</h3>
-          <label for="user">Username</label> 
+          <label htmlFor="user">Username</label> 
           <input onChange={e => this.handleChange(e)}
                  value={this.state.fields.user}
                  id="user" />
           <div className="error-message">
             <p>{this.state.errors.user}</p>
           </div>
-          <label for="quote">Favorite Star Wars Quote</label>
+          <label htmlFor="quote">Favorite Star Wars Quote</label>
           <input onChange={e => this.handleChange(e)}
                  value={this.state.fields.quote}
                  id="quote" />
           <div className="error-message">
             <p>{this.state.errors.quote}</p>
           </div>
-          <label for="quote">Familiarity with Star Wars</label>
+          <label htmlFor="quote">Familiarity with Star Wars</label>
           <select onChange={e => this.handleChange(e)}
                   id="ranking"
                   value={this.state.ranking}>
