@@ -1,12 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+
 import Login from './Login';
 
 describe('Login', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Login />)
+    wrapper = shallow(<Login logInUser={jest.fn()}/>)
   });
 
   it('should match the snapshot', () => {
@@ -72,7 +73,7 @@ describe('Login', () => {
     }
 
     wrapper.setState({
-      fields: fields
+      fields
     });
 
     let validation = wrapper.instance().validateForm();
@@ -85,7 +86,7 @@ describe('Login', () => {
     };
 
     wrapper.setState({
-      fields: fields
+      fields
     });
 
     validation = wrapper.instance().validateForm();
@@ -100,7 +101,7 @@ describe('Login', () => {
     }
 
     wrapper.setState({
-      fields: fields
+      fields
     });
 
     expect(wrapper.state().errors.user).toBe(undefined);
@@ -113,7 +114,7 @@ describe('Login', () => {
     };
 
     wrapper.setState({
-      fields: fields
+      fields
     });
 
     expect(wrapper.state().errors.quote).toBe(undefined);
@@ -131,7 +132,7 @@ describe('Login', () => {
     };
 
     wrapper.setState({
-      fields: fields
+      fields
     });
 
     const validation = wrapper.instance().validateForm();
@@ -145,7 +146,7 @@ describe('Login', () => {
     };
 
     wrapper.setState({
-      fields: fields
+      fields
     });
 
     expect(wrapper.state().fields).toEqual(fields);
@@ -162,7 +163,7 @@ describe('Login', () => {
 
 
     wrapper.setState({
-      fields: fields
+      fields
     });
 
     const mockEvent = {
