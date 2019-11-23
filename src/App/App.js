@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+
+import Main from '../Main/Main';
 import './App.css';
 
-import Login from '../Login/Login';
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      userInfo: null,
+    }
+    this.logInUser = this.logInUser.bind(this);
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <Login />
-    </div>
-  );
+  logInUser(userInfo) {
+    this.setState({
+      userInfo,
+    });
+    this.props.history.push('/movies');
+  }
+
+  render() {
+        return (
+          <div className="App">
+            <Main logInUser={this.logInUser} />
+          </div>
+        )
+  }
 }
 
-export default App;
+export default withRouter(App);
