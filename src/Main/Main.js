@@ -4,7 +4,7 @@ import Login from '../Login/Login';
 import Movies from '../Movies/Movies';
 
 function Main(props) {
-  const {logInUser} = props
+  const {logInUser} = props;
 
   return (
     <div>
