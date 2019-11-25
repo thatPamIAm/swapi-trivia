@@ -1,0 +1,6 @@
+.movies-container {
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: 400px 400px 400px;
+  grid-template-rows: 500px 500px 500px;
+}

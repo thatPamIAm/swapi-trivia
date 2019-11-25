@@ -37,9 +37,9 @@ class Movies extends Component {
     })
 
     return (
-      <div>
+      <section className="movies-container">
         {movies}
-      </div>
+      </section>
     )
   } 
 }

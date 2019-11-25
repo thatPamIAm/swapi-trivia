@@ -1,12 +1,14 @@
 import React from 'react';
 
+import './Card.css';
+
 function Card(props) {
   return(
-    <div>
-      <p>{props.movie.title}</p>
-      <p>{props.movie.episode_id}</p>
-      <p>{props.movie.release_date}</p>   
-    </div>
+    <article className="movie-card">
+      <h2>{props.movie.title}</h2>
+      <h4>Episode {props.movie.episode_id}</h4>
+      <h4>{props.movie.release_date}</h4>
+    </article>
   )
 }
 
