@@ -1,0 +1,16 @@
+.movie-card {
+  background-color: #98a1ab;
+  color: #0d0b0f;
+  margin: 100px 30px 30px;
+  text-align: center;
+}
+
+.movie-card h2 {
+  background-color: #3b74b0;
+  margin-top: 0;
+  padding: 15px;
+}
+
+.movie-card h4 {
+  color: #373338;
+}

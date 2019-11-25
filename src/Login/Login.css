@@ -1,7 +1,9 @@
 .modal {
   align-items: center;
+  background-color: #d6dfe8;
   border: 1px gray solid;
   border-radius: 5px;
+  color: #0d0b0f;
   display: flex;
   font-family: Helvetica;
   height: 400px;
@@ -24,6 +26,7 @@ form input, form select, form button {
 }
 
 form button {
+  background-color: #98a1ab;
   cursor: pointer;
   font-family: Helvetica;
   font-size: 1rem;
