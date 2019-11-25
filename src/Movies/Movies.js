@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
 import Card from '../Card/Card';
+import './Movies.css'
 
 class Movies extends Component {
   constructor() {
@@ -18,10 +19,19 @@ class Movies extends Component {
   async fetchMovies(url) {
     let data = await fetch(url);
     data = await data.json();
-    data.results.sort((a, b) => a.episode_id - b.episode_id);
+
+    data = data.results.map((result) => {
+      const last = result.release_date.substring(0, 4);
+      const first = result.release_date.substring(5, 10);
+
+      result.release_date = first + '-' + last;
+      return result;
+    });
+
+    data.sort((a, b) => a.episode_id - b.episode_id);
 
     this.setState({
-      movies: data.results
+      movies: data
     });
   }
 
