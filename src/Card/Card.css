@@ -1,5 +1,5 @@
 .movie-card {
-  background-color: #98a1ab;
+  background-color: #d6dfe8;
   color: #0d0b0f;
   margin: 100px 30px 30px;
   text-align: center;
@@ -13,4 +13,8 @@
 
 .movie-card h4 {
   color: #373338;
+}
+
+.characters-btn {
+  margin-top: 150px;
 }

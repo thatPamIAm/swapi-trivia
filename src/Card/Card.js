@@ -8,6 +8,7 @@ function Card(props) {
       <h2>{props.movie.title}</h2>
       <h4>Episode {props.movie.episode_id}</h4>
       <h4>{props.movie.release_date}</h4>
+      <button className="characters-btn">View Characters</button>
     </article>
   )
 }

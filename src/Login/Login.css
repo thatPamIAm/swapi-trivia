@@ -18,14 +18,14 @@ form {
   width: 75%;
 }
 
-form input, form select, form button {
+form input, form select, button {
   border-radius: 5px;
   height: 30px;
   margin: 5px 0 1px 0;
   padding: 0 5px;
 }
 
-form button {
+button {
   background-color: #98a1ab;
   cursor: pointer;
   font-family: Helvetica;
