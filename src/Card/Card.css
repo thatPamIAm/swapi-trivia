@@ -1,7 +1,8 @@
 .movie-card {
   background-color: #d6dfe8;
   color: #0d0b0f;
-  margin: 70px 0;
+  height: 375px;
+  margin: 150px 0;
   text-align: center;
   width: 400px;
 }
