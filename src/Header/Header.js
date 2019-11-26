@@ -3,9 +3,7 @@ import React from 'react';
 import './Header.css';
 
 function Header(props) {
-  const {user, quote, ranking} = props.user
-  console.log(props)
-;  
+  const {user, quote, ranking} = props.user;
   return (
     <header> 
       <button className="logout-btn"
