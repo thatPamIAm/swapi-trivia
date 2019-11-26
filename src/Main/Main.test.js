@@ -4,9 +4,11 @@ import { shallow } from 'enzyme';
 import Main from './Main';
 
 describe('Main', () => {
-  it('should match the snapshot', () => {
-    let wrapper = shallow(<Main/>);
+  let mockLogin = jest.fn();
 
+  it('should match the snapshot', () => {
+    let wrapper = shallow(<Main logInUser={mockLogin}/>);
+    
     expect(wrapper).toMatchSnapshot();
   });
 });
