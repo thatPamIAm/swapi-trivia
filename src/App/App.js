@@ -11,19 +11,31 @@ class App extends Component {
       userInfo: null,
     }
     this.logInUser = this.logInUser.bind(this);
+    this.logOutUser = this.logOutUser.bind(this);
   }
 
   logInUser(userInfo) {
     this.setState({
-      userInfo,
+      userInfo
     });
+
     this.props.history.push('/movies');
+  }
+
+  logOutUser() {
+    this.setState({
+      userInfo: null
+    });
+
+    this.props.history.push('/')
   }
 
   render() {
     return (
       <div className="App">
-        {this.state.userInfo && <Header user={this.state.userInfo} />}
+        {this.state.userInfo &&
+        <Header user={this.state.userInfo}
+                logOutUser={this.logOutUser} /> }
         <Main logInUser={this.logInUser} />
       </div>
     )
