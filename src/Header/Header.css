@@ -1,0 +1,10 @@
+header {
+  color: white;
+  display: flex;
+  flex-direction: row-reverse;
+  box-shadow:0 3px 6px #7A7A7A;
+}
+
+header h2 {
+  margin: 35px 70px;
+}
