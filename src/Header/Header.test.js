@@ -10,8 +10,12 @@ describe('Header', () => {
     ranking: 'Novice'
   }
 
+
+  const mockLogOut = jest.fn();
+
   it('should match the snapshot', () => {
-    let wrapper = shallow(<Header user={mockUser}/>);
+    let wrapper = shallow(<Header user={mockUser}
+                                  logOutUser={mockLogOut} />);
     expect(wrapper).toMatchSnapshot();
   });
 });
