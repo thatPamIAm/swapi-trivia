@@ -33,4 +33,23 @@ describe('App', () => {
     wrapper.instance().logInUser(user);
     expect(wrapper.state().userInfo).toBe(user);
   });
+
+  it('should set the state of userInfo to null when logOutUser is invoked', () => {
+
+    const user = {
+      fields: {
+        user: 'Darth Vader',
+        quote: 'I think, therefore I am',
+        ranking: 'Expert'
+      }
+    }
+
+    wrapper.instance().setState({
+      userInfo: user
+    })
+
+    expect(wrapper.state().userInfo).toBe(user);
+    wrapper.instance().logOutUser(user);
+    expect(wrapper.state().userInfo).toBe(null);
+  })
 });
