@@ -1,8 +1,11 @@
 header {
+  background-color: #110e12;
+  box-shadow:0 3px 6px #7A7A7A;
   color: white;
   display: flex;
   flex-direction: row-reverse;
-  box-shadow:0 3px 6px #7A7A7A;
+  position: fixed;
+  width: 100%;
 }
 
 header h2 {
