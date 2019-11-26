@@ -11,3 +11,9 @@ header {
 header h2 {
   margin: 35px 70px;
 }
+
+.logout-btn {
+  margin: 30px 25px;
+  height: 40px;
+  width: 100px;
+}
