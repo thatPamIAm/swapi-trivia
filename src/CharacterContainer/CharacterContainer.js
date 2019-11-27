@@ -11,7 +11,7 @@ class CharacterContainer extends Component {
   }
 
   componentDidMount() {
-    this.fetchCharacters(this.props.characters)
+    this.fetchCharacters(this.props.urls)
   }
 
   async fetchCharacters(list) {
@@ -23,7 +23,7 @@ class CharacterContainer extends Component {
   )
 
   this.setState({
-    characters: characters
+    characters
   })
  }
 

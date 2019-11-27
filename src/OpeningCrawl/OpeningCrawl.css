@@ -1,0 +1,36 @@
+.star-wars {
+  background-image: url(https://i.imgur.com/ThRRcRg.jpg);
+  background-size: cover;
+  box-shadow:0 3px 6px #7A7A7A;
+  color: #feda4a;
+  display: flex;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 400%;
+  font-weight: 600;
+  height: 200px;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 400px;
+  position: fixed;
+  overflow: hidden;
+
+}
+
+.crawl {
+  animation: crawl 60s linear;
+  position: relative;
+  top: 9999px;
+  transform-origin: 50% 100%;
+  text-align: center;
+}
+
+@keyframes crawl {
+  0% {
+    top: 0;
+    transform: rotateX(20deg)  translateZ(0);
+  }
+  100% { 
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
+}
