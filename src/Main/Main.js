@@ -62,8 +62,11 @@ class Main extends Component{
           <Route exact path="/">
             <Login logInUser={logInUser} />
           </Route>
-          <Route path="/movies">
-            <CardContainer movies={this.state.movies} />
+          <Route exact path="/movies">
+            <MovieContainer movies={this.state.movies} viewCharacters={this.viewCharacters} />
+          </Route>
+          <Route path={"/movies/:" + this.state.movieId}>
+            <CharacterContainer characters={this.state.urls} />
           </Route>
         </Switch>
       </div>
@@ -71,4 +74,4 @@ class Main extends Component{
   }
 }
 
-export default Main;
+export default withRouter(Main);
