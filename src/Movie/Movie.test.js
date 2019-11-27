@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Card from './Card';
+import Movie from './Movie';
 
-describe('Card', () => {
+describe('Movie', () => {
   const movie = {
     title: 'The Phantom Menance',
     episoide_id: 1,
@@ -11,7 +11,7 @@ describe('Card', () => {
   }
 
   it('should match the snapshot', () => {
-    let wrapper = shallow(<Card movie={movie} />)
+    let wrapper = shallow(<Movie movie={movie} />)
     expect(wrapper).toMatchSnapshot();
   });
 });

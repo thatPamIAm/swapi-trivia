@@ -1,4 +1,4 @@
-.movie-card {
+.card {
   background-color: #d6dfe8;
   color: #0d0b0f;
   height: 375px;
@@ -7,13 +7,13 @@
   width: 400px;
 }
 
-.movie-card h2 {
+.card h2 {
   background-color: #3b74b0;
   margin-top: 0;
   padding: 15px;
 }
 
-.movie-card h4 {
+.card h4 {
   color: #373338;
 }
 
