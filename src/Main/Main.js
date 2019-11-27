@@ -3,6 +3,7 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 
 import Login from '../Login/Login';
 import CharacterContainer from '../CharacterContainer/CharacterContainer';
+import OpeningCrawl from '../OpeningCrawl/OpeningCrawl';
 import MovieContainer from '../MovieContainer/MovieContainer';
 
 class Main extends Component{
@@ -11,6 +12,7 @@ class Main extends Component{
     this.state = {
       movies: [],
       urls: [],
+      crawl: {}
     }
     this.viewCharacters = this.viewCharacters.bind(this);
   }
@@ -20,18 +22,29 @@ class Main extends Component{
   }
 
   viewCharacters(id) {
-    const urls = this.findCharacters(id);
+    const urls = this.findCharacterUrls(id);
+    const crawl = this.findCrawlInfo(id);
     
     this.setState({
-      urls
+      urls,
+      crawl
     });
 
     this.props.history.push('/movies/' + id)
   }
 
-  findCharacters(id) {
+  findCharacterUrls(id) {
     return this.state.movies.find(movie => movie.episode_id === id)
       .characters;
+  }
+
+  findCrawlInfo(id) {
+    const movie = this.state.movies.find(movie => movie.episode_id === id);
+
+    return {
+      title: movie.title,
+      text: movie.opening_crawl
+    }
   }
 
   async fetchMovies(url) {
@@ -66,7 +79,8 @@ class Main extends Component{
             <MovieContainer movies={this.state.movies} viewCharacters={this.viewCharacters} />
           </Route>
           <Route path={"/movies/:" + this.state.movieId}>
-            <CharacterContainer characters={this.state.urls} />
+            <OpeningCrawl crawl={this.state.crawl}/>
+            <CharacterContainer urls={this.state.urls} />
           </Route>
         </Switch>
       </div>
