@@ -1,19 +1,37 @@
 import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom'; 
+import { Switch, Route, withRouter } from 'react-router-dom'; 
+
 import Login from '../Login/Login';
-import CardContainer from '../CardContainer/CardContainer';
+import CharacterContainer from '../CharacterContainer/CharacterContainer';
+import MovieContainer from '../MovieContainer/MovieContainer';
 
 class Main extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      movies: null,
-      characters: null
+      movies: [],
+      urls: [],
     }
+    this.viewCharacters = this.viewCharacters.bind(this);
   }
 
   componentDidMount(){
     this.fetchMovies('https://swapi.co/api/films/');
+  }
+
+  viewCharacters(id) {
+    const urls = this.findCharacters(id);
+    
+    this.setState({
+      urls
+    });
+
+    this.props.history.push('/movies/' + id)
+  }
+
+  findCharacters(id) {
+    return this.state.movies.find(movie => movie.episode_id === id)
+      .characters;
   }
 
   async fetchMovies(url) {
