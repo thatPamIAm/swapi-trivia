@@ -8,7 +8,7 @@ describe('Main', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Main logInUser={mockLogin}/>);
+    wrapper = shallow(<Main.WrappedComponent logInUser={mockLogin}/>);
   });
 
   it('should match the snapshot', () => {
@@ -16,7 +16,8 @@ describe('Main', () => {
   });
 
   it('should have a default state', () => {
-    expect(wrapper.state().movies).toBe(null);
-    expect(wrapper.state().characters).toBe(null);
+    expect(wrapper.state().movies).toEqual([]);
+    expect(wrapper.state().urls).toEqual([]);
+    expect(wrapper.state().crawl).toEqual({});
   });
 });
