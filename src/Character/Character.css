@@ -1,0 +1,19 @@
+/*Base styling for Character in Movie.css*/
+/*Additional styling below*/
+
+.character-films-container {
+  height: 155px;
+}
+
+li {
+  list-style-type: none;
+}
+
+span {
+  font-weight: bold;
+}
+
+.favorites-btn {
+  height: 40px;
+  width: 150px;
+}
