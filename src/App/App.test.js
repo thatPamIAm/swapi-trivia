@@ -16,7 +16,6 @@ describe('App', () => {
   });
 
   it('should have a default state', () => {
-
     expect(wrapper.state().userInfo).toBe(null);
   });
 

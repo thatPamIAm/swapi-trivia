@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Character from '../Character/Character';
 
-import './CharacterContainer.css'
 class CharacterContainer extends Component {
   constructor(props) {
     super(props);
@@ -30,7 +29,7 @@ class CharacterContainer extends Component {
   render() {
     const characters = this.state.characters.map((character, index) => {
       return <Character character={character} key={index} />
-    });
+    }).slice(0, 10);
 
     return (
       <section className="container">

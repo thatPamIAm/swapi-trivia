@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import CardContainer from './CardContainer';
+import MovieContainer from './MovieContainer';
 
 describe('Movies', () => {
   let wrapper;
@@ -12,7 +12,7 @@ describe('Movies', () => {
   ];
 
   beforeEach(() => {
-    wrapper = shallow(<CardContainer movies={mockMovies} />);
+    wrapper = shallow(<MovieContainer movies={mockMovies} />);
   });
 
   it('should match the snapshot', () => {
